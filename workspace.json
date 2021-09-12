@@ -1,7 +1,151 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "not-your-chat": {
+      "root": "apps/not-your-chat",
+      "sourceRoot": "apps/not-your-chat/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/not-your-chat",
+            "index": "apps/not-your-chat/src/index.html",
+            "main": "apps/not-your-chat/src/main.tsx",
+            "polyfills": "apps/not-your-chat/src/polyfills.ts",
+            "tsConfig": "apps/not-your-chat/tsconfig.app.json",
+            "assets": [
+              "apps/not-your-chat/src/favicon.ico",
+              "apps/not-your-chat/src/assets"
+            ],
+            "styles": [],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/not-your-chat/src/environments/environment.ts",
+                  "with": "apps/not-your-chat/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "not-your-chat:build",
+            "hmr": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "not-your-chat:build:production",
+              "hmr": false
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/not-your-chat/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/not-your-chat"],
+          "options": {
+            "jestConfig": "apps/not-your-chat/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "not-your-chat-e2e": {
+      "root": "apps/not-your-chat-e2e",
+      "sourceRoot": "apps/not-your-chat-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/not-your-chat-e2e/cypress.json",
+            "devServerTarget": "not-your-chat:serve",
+            "tsConfig": "apps/not-your-chat-e2e/tsconfig.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "not-your-chat:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/not-your-chat-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "not-your-chat-ui": {
+      "root": "libs/not-your-chat-ui",
+      "sourceRoot": "libs/not-your-chat-ui/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/not-your-chat-ui/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/not-your-chat-ui"],
+          "options": {
+            "jestConfig": "libs/not-your-chat-ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/react"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "style": "styled-components",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "styled-components"
+      },
+      "library": {
+        "style": "styled-components",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "not-your-chat"
 }
