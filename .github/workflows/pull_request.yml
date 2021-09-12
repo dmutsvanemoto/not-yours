@@ -27,7 +27,7 @@ jobs:
         run: yarn
       
       - name: Unit test affected dependencies
-        run: nx affected:test
+        run: yarn nx affected:test
 
       - name: E2E test affected dependencies
-        run: nx affected:e2e
+        run: yarn nx affected:e2e
