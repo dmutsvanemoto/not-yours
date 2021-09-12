@@ -104,6 +104,28 @@
           }
         }
       }
+    },
+    "not-your-chat-ui": {
+      "root": "libs/not-your-chat-ui",
+      "sourceRoot": "libs/not-your-chat-ui/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/not-your-chat-ui/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/not-your-chat-ui"],
+          "options": {
+            "jestConfig": "libs/not-your-chat-ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
