@@ -16,10 +16,12 @@ phases:
       - npm i
   build:
     commands:
-      - npx nx lint not-your-chat
+      - npx nx run not-your-chat:lint --outputFile=not-your-chat-lint-report.trx
   post_build:
     commands:
       - ls -lf
-artifacts:
-  files:
-    - dist/apps/not-your-chat
+reports:
+  lint-report:
+    files:
+      - not-your-chat-lint-report.trx
+    file-format: visualstudio
