@@ -25,17 +25,5 @@
         "projects": "dependencies"
       }
     ]
-  },
-  "projects": {
-    "not-your-chat": {
-      "tags": []
-    },
-    "not-your-chat-e2e": {
-      "tags": [],
-      "implicitDependencies": ["not-your-chat"]
-    },
-    "not-your-chat-ui": {
-      "tags": []
-    }
   }
 }
