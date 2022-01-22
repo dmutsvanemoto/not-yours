@@ -16,10 +16,10 @@ phases:
       - npm i
   build:
     commands:
-      - npx nx build not-your-chat
+      - npx nx test not-your-chat
   post_build:
     commands:
-      - echo Build completed on `date`
+      - ls -lf
 artifacts:
   files:
     - dist/apps/not-your-chat

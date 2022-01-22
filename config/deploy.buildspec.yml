@@ -1,0 +1,24 @@
+version: 0.2
+
+env:
+  variables:
+    NODE_ENV: development
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+      nodejs: latest
+
+  pre_build:
+    commands:
+      - aws s3 cp s3://not-your-build-outputs/not-yours-codebuild ./not-yours-codebuild.zip
+      - unzip not-yours-codebuild.zip -d .
+      - unzip dist/apps/not-your-chat.zip -d ./not-your-chat
+      - ls -lf
+  build:
+    commands:
+      - aws s3 cp ./not-your-chat s3://not-your-chat-app --acl public-read
+  post_build:
+    commands:
+      - ls -lf
