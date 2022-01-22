@@ -4,25 +4,5 @@
     "not-your-chat": "apps/not-your-chat",
     "not-your-chat-e2e": "apps/not-your-chat-e2e",
     "not-your-chat-ui": "libs/not-your-chat-ui"
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/react"
-  },
-  "generators": {
-    "@nrwl/react": {
-      "application": {
-        "style": "styled-components",
-        "linter": "eslint",
-        "babel": true
-      },
-      "component": {
-        "style": "styled-components"
-      },
-      "library": {
-        "style": "styled-components",
-        "linter": "eslint"
-      }
-    }
-  },
-  "defaultProject": "not-your-chat"
+  }
 }
