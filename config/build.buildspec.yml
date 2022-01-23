@@ -7,19 +7,16 @@ env:
 phases:
   install:
     runtime-versions:
-      java: corretto11
       nodejs: latest
 
   pre_build:
     commands:
-      - ls -lf
-      - npm i
+      - yarn install --pure-lockfile
+
   build:
     commands:
       - npx nx build not-your-chat
-  post_build:
-    commands:
-      - ls -lf
+
 artifacts:
   files:
     - dist/apps/not-your-chat
