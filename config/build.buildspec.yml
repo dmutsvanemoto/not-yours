@@ -19,9 +19,9 @@ phases:
 
   post_build:
     commands:
-      - zip -r not-your-chat.zip ./dist/apps/not-your-chat
+      - mv dist/apps/not-your-chat build_output/not-your-chat-app
 
 artifacts:
   files:
-    - not-your-chat.zip
-  name: not-your-chat
+    - build_output/not-your-chat-app/**/*
+  name: not-your-chat-app
