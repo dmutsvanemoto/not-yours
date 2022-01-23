@@ -19,4 +19,4 @@ phases:
 
 artifacts:
   files:
-    - dist/apps/not-your-chat
+    - dist/apps/not-your-chat/**/*
