@@ -21,4 +21,5 @@ phases:
 reports:
   not-your-chat:
     files:
-      - coverage/apps/not-your-chat
+      - '**/*'
+    base-directory: 'coverage/apps/not-your-chat'
