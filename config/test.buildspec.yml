@@ -12,11 +12,11 @@ phases:
 
   pre_build:
     commands:
-      - yarn install
+      - yarn install --pure-lockfile
 
   build:
     commands:
-      - npx nx test not-your-chat --ci --coverage --skip-nx-cache
+      - npx nx test not-your-chat --ci --coverage --skip-nx-cache --showConfig
 
 reports:
   not-your-chat:
