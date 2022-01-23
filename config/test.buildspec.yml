@@ -23,5 +23,5 @@ phases:
       - ls -lf
 reports:
   not-your-chat-test-report:
-  files:
-    - coverage/apps/not-your-chat
+    files:
+      - coverage/apps/not-your-chat
