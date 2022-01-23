@@ -2,12 +2,12 @@ version: 0.2
 
 env:
   variables:
-    NODE_ENV: development
+    NODE_ENV: test
+    BABEL_ENV: test
 
 phases:
   install:
     runtime-versions:
-      java: corretto11
       nodejs: latest
 
   pre_build:
