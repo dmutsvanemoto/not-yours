@@ -19,6 +19,7 @@ phases:
 
   post_build:
     commands:
+      - mkdir -p build_output/not-your-chat-app
       - mv dist/apps/not-your-chat build_output/not-your-chat-app
 
 artifacts:
