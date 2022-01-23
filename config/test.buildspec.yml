@@ -16,10 +16,12 @@ phases:
       - npm i
   build:
     commands:
-      - npx nx test not-your-chat
+      # - nx affected:test not-your-chat --codeCoverage --skip-nx-cache --base=main~1 --head=main
+      - nx affected:test not-your-chat --codeCoverage --skip-nx-cache
   post_build:
     commands:
       - ls -lf
-artifacts:
+reports:
+  not-your-chat-test-report:
   files:
-    - dist/apps/not-your-chat
+    - coverage/apps/not-your-chat
