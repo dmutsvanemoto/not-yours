@@ -16,8 +16,7 @@ phases:
       - npm i
   build:
     commands:
-      # - nx affected:test not-your-chat --codeCoverage --skip-nx-cache --base=main~1 --head=main
-      - npx nx affected:test not-your-chat --codeCoverage --skip-nx-cache
+      - npx nx run not-your-chat:test --ci --coverage
   post_build:
     commands:
       - ls -lf
