@@ -17,6 +17,13 @@ phases:
   build:
     commands:
       - npx nx test not-your-chat --ci --coverage --skip-nx-cache #--showConfig
+      - lf -lf
+      - echo END OF ROOT LS LF
+      - echo BLANK LINE
+      - echo BLANK LINE
+      - echo BLANK LINE
+      - cd apps/not-your-chat && ls -lf
+      - cd ../..
 
 reports:
   not-your-chat:
