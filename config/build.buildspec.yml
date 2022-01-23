@@ -17,7 +17,11 @@ phases:
     commands:
       - npx nx build not-your-chat
 
+  post_build:
+    commands:
+      - zip -r not-your-chat.zip ./dist/apps/not-your-chat
+
 artifacts:
   files:
-    - '**/*'
-  base-directory: 'dist/apps/not-your-chat'
+    - not-your-chat.zip
+  name: not-your-chat
