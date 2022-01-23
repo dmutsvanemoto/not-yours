@@ -12,15 +12,13 @@ phases:
 
   pre_build:
     commands:
-      - ls -lf
-      - npm i
+      - npm install
+
   build:
     commands:
-      - npx nx run not-your-chat:test --ci --coverage
-  post_build:
-    commands:
-      - ls -lf
+      - npx nx test not-your-chat --ci --coverage --skip-nx-cache
+
 reports:
-  not-your-chat-test-report:
+  not-your-chat:
     files:
       - coverage/apps/not-your-chat
