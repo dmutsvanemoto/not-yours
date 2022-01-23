@@ -16,7 +16,7 @@ phases:
 
   build:
     commands:
-      - lf -lf
+      - ls -lf
       - echo END OF ROOT LS LF
       - echo BLANK LINE
       - echo BLANK LINE
