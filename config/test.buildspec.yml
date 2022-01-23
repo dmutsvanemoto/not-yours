@@ -16,7 +16,7 @@ phases:
 
   build:
     commands:
-      - npx nx test not-your-chat --ci --coverage --skip-nx-cache --showConfig
+      - npx nx test not-your-chat --ci --coverage --skip-nx-cache #--showConfig
 
 reports:
   not-your-chat:
