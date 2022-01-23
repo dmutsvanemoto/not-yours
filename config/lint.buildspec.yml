@@ -7,19 +7,16 @@ env:
 phases:
   install:
     runtime-versions:
-      java: corretto11
       nodejs: latest
 
   pre_build:
     commands:
-      - ls -lf
-      - npm i
+      - yarn install --pure-lockfile
+
   build:
     commands:
       - npx nx run not-your-chat:lint --outputFile=not-your-chat-lint-report.trx
-  post_build:
-    commands:
-      - ls -lf
+
 reports:
   lint-report:
     files:
