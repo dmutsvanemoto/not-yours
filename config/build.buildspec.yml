@@ -21,6 +21,7 @@ phases:
     commands:
       - mkdir -p build_output/not-your-chat-app
       - mv dist/apps/not-your-chat build_output/not-your-chat-app
+      - cp config/deploy.buildspec.yml build_output/deploy.buildspec.yml
 
 artifacts:
   files:
